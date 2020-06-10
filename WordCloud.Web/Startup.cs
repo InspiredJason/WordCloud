@@ -54,6 +54,7 @@ namespace WordCloud.Web
                 options.LogoutPath = $"/Identity/Account/Logout";
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
+            services.AddControllersWithViews();
 
             // Give MediatR the assembly where the commands and queries are defined
             services.AddMediatR(typeof(Create.Handler).Assembly);
