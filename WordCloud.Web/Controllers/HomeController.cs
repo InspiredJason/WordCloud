@@ -26,6 +26,8 @@ namespace WordCloud.Web.Controllers
             return View();
         }
 
+
+        [Route("Home/GetContent")]
         [HttpPost]
         public async Task<ActionResult> GetContent(WordCloudDto model)
         {

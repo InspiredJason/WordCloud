@@ -18,6 +18,8 @@ namespace WordCloud.Web.Controllers
         {
             _mediator = mediator;
         }
+
+        [Route("Admin/WordCount")]
         public async Task<ActionResult<WordCountDto>> WordCount()
         {
             var model = await _mediator.Send(new List.Query());
