@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCloud.Persistence", "Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCloud.Tests", "WordCloud.Tests\WordCloud.Tests.csproj", "{6E851221-2AE0-4585-B8A9-0A9B6D618A76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCloud.Infrastructure", "WordCloud.Infrastructure\WordCloud.Infrastructure.csproj", "{D0380F86-D82A-4999-A453-B097B8C14E19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6E851221-2AE0-4585-B8A9-0A9B6D618A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E851221-2AE0-4585-B8A9-0A9B6D618A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E851221-2AE0-4585-B8A9-0A9B6D618A76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0380F86-D82A-4999-A453-B097B8C14E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0380F86-D82A-4999-A453-B097B8C14E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0380F86-D82A-4999-A453-B097B8C14E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0380F86-D82A-4999-A453-B097B8C14E19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
