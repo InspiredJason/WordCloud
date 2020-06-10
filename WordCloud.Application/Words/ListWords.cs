@@ -20,16 +20,16 @@ namespace WordCloud.Application.Words
         public class Handler : IRequestHandler<Query, WordCloudDto>
         {
             private readonly DataContext _dataContext;
-
-            public Handler(DataContext dataContext)
+            private readonly IWordService _wordService;
+            public Handler(DataContext dataContext, IWordService wordService)
             {
                 _dataContext = dataContext;
+                _wordService = wordService;
             }
 
             public async Task<WordCloudDto> Handle(Query request, CancellationToken cancellationToken)
             {
-                var service = new WordService();
-                var results = await service.GetWordsFromSite(request.Url, request.Count);
+                var results = await _wordService.GetWordsFromSite(request.Url, request.Count);
                 return results;
             }
         }

@@ -12,8 +12,9 @@ using WordCloud.Infrastructure;
 
 namespace WordCloud.Application.Services
 {
-    public class WordService
+    public class WordService : IWordService
     {
+        private readonly string[] ArticlesAndPrepositions = new string[] { "a", "the", "an", "above", "across", "after", "against", "against", "along", "among", "around", "at", "away from", "before", "behind", "below", "beneath", "beside", "between", "by", "down", "during", "for", "from", "in", "in front of", "inside", "into", "near", "next to", "off", "on", "onto", "out of", "outside", "over", "through", "till", "to", "toward", "under", "underneath", "until", "up" };
         /// <summary>
         /// Given an IEnumerable of strings, returns a Dictionary of distinct words and their occuraences
         /// </summary>
@@ -33,8 +34,9 @@ namespace WordCloud.Application.Services
 
                 // Now loop through the words and either add to the dictionary with a count of 1 if it doesn't
                 // exist, otherwise increment the count by 1 if found
-                // Remove articles "a", "the" and "an"
-                foreach (var word in words.RemoveStopWords(new string[] { "a", "the", "an" }))
+                // Remove articles "a", "the" and "an" and all prepositions
+                // articles and prepositions are unlikely to change, so happy to have this as a const here
+                foreach (var word in words.RemoveStopWords(ArticlesAndPrepositions))
                 {
 
                     if (allWords.ContainsKey(word))
@@ -92,7 +94,8 @@ namespace WordCloud.Application.Services
         public List<WordCount> GenerateWords(Dictionary<string, int> words)
         {
             var wordsToSave = words
-                .Select(w => {
+                .Select(w =>
+                {
                     var hash = Encryption.GenerateSaltedHash(w.Key);
                     return new WordCount { Id = hash, Word = w.Key, Count = w.Value };
                 });

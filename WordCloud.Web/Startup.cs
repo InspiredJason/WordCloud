@@ -15,6 +15,7 @@ using WordCloud.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using WordCloud.Application.Words;
+using WordCloud.Application.Services;
 
 namespace WordCloud.Web
 {
@@ -58,6 +59,7 @@ namespace WordCloud.Web
 
             // Give MediatR the assembly where the commands and queries are defined
             services.AddMediatR(typeof(Create.Handler).Assembly);
+            services.AddScoped<IWordService, WordService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
