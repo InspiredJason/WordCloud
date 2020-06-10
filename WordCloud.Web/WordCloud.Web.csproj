@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WordCloud.Application\WordCloud.Application.csproj" />
     <ProjectReference Include="..\WordCloud.Persistence\WordCloud.Persistence.csproj" />
   </ItemGroup>
 

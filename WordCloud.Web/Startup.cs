@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WordCloud.Persistence;
 using Microsoft.AspNetCore.Mvc;
+using MediatR;
+using WordCloud.Application.Words;
 
 namespace WordCloud.Web
 {
@@ -45,6 +47,9 @@ namespace WordCloud.Web
                     options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
                 }
             );
+
+            // Give MediatR the assembly where the commands and queries are defined
+            services.AddMediatR(typeof(Create.Handler).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

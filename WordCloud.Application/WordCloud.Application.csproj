@@ -5,13 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FlexLabs.EntityFrameworkCore.Upsert" Version="3.1.0" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\WordCloud.Domain\WordCloud.Domain.csproj" />
     <ProjectReference Include="..\WordCloud.Infrastructure\WordCloud.Infrastructure.csproj" />
+    <ProjectReference Include="..\WordCloud.Persistence\WordCloud.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

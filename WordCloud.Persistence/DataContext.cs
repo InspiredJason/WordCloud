@@ -9,5 +9,7 @@ namespace WordCloud.Persistence
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
+
+        public DbSet<WordCount> Words { get; set; }
     }
 }
