@@ -20,12 +20,9 @@ namespace WordCloud.Web.Controllers
             _mediator = mediator;
         }
 
-        public async Task<ActionResult> Index()
+        public IActionResult Index()
         {
-            //return View();
-            var model = await _mediator.Send(new List.Query());
-
-            return View("~/Views/Admin/WordCount.cshtml", model);
+            return View();
         }
 
         [HttpPost]
