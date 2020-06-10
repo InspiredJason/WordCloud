@@ -6,7 +6,7 @@ namespace WordCloud.Tests
     public class EncryptionTests
     {
         [Fact]
-        public void ValidateSaltedHashDiffersForMultipleCallsWithSameTestString()
+        public void GivenAWordIsProvidedWhenGenerateHashIsCalledForSameWordThenTheResultsDiffer()
         {
             // Arrange
             var testString = "TestThis";
