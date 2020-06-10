@@ -71,6 +71,7 @@ body {
 }
 
 #chartdiv {
+    margin-top: 50px;
     width: 100%;
-    height: 350px;
+    height: 450px;
 }
