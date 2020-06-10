@@ -20,15 +20,11 @@ namespace WordCloud.Web.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-
-        [Route("Home/GetContent")]
-        [HttpPost]
         public async Task<ActionResult> GetContent(WordCloudDto model)
         {
             var results = await _mediator.Send(new ListWords.Query { Url = model.Url, Count = 100 });
