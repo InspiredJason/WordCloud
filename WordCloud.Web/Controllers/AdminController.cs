@@ -19,12 +19,11 @@ namespace WordCloud.Web.Controllers
             _mediator = mediator;
         }
 
-        [Route("Admin/WordCount")]
-        public async Task<ActionResult<WordCountDto>> WordCount()
+        public async Task<ActionResult<WordCountDto>> Index()
         {
             var model = await _mediator.Send(new List.Query());
 
-            return View(model);
+            return View("~/Views/Admin/WordCount.cshtml", model);
         }
     }
 }

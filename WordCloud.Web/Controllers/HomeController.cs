@@ -25,6 +25,7 @@ namespace WordCloud.Web.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<ActionResult> GetContent(WordCloudDto model)
         {
             var results = await _mediator.Send(new ListWords.Query { Url = model.Url, Count = 100 });
