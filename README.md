@@ -13,4 +13,7 @@ This application a .Net Core 3.1 MVC web app with a SQL Server backend. The app 
 3. Build (F5) 
 
 # Publishing the Website
-There are a number of ways you can publish the website, including directly from Visual Studio, use Azure DevOps pipelines etc.
+For deployment of the project using Github, follow these steps:
+1. Set up your app service (this is a .net core app, so you can deploy to linux) and sql db in Azure
+2. Go to the deployment center on your app service and configure to use Github to deploy (you will need to authenticate using your Github credentials)
+3. The deployment should begin
